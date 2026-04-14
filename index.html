@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>完全ノーリスク・買付サポートプロジェクト</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            green: '#006039', // ロレックス風の深い緑
+                            gold: '#D4AF37',  // 高級感のあるゴールド
+                            light: '#F8F9FA',
+                            dark: '#1A1A1A'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', '"Hiragino Kaku Gothic ProN"', 'Meiryo', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans JP', sans-serif; }
+        .bg-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23006039' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="bg-brand-light text-brand-dark antialiased">
+
+    <!-- ヒーローセクション -->
+    <header class="bg-brand-green text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-20"></div>
+        <div class="relative max-w-3xl mx-auto px-4 py-12 sm:py-20 text-center">
+            <span class="inline-block py-2 px-6 rounded-full bg-brand-gold text-brand-dark text-sm sm:text-base md:text-lg font-black mb-6 shadow-md tracking-widest">
+                完全無料・リスクゼロ
+            </span>
+            <h1 class="text-2xl sm:text-4xl font-black mb-4 leading-tight sm:leading-snug tracking-tight">
+                週に1回、<br class="block sm:hidden"><span class="text-brand-gold">5分もかからない作業で！</span><br>
+                スキマ時間で確実なお小遣いを。
+            </h1>
+            <p class="text-sm sm:text-lg mb-8 text-gray-200 leading-relaxed">
+                毎週1,000円（月4,000円）のお小遣い ＋ <br class="block sm:hidden">当選して店舗に行けば<br class="hidden sm:block">
+                <span class="text-brand-gold font-bold text-xl sm:text-2xl">最低2万円</span>の報酬を完全保証！
+            </p>
+
+            <!-- ロレポチの仕組み図解（動画の代わり） -->
+            <div class="w-full max-w-xl mx-auto mb-10 text-left">
+                <div class="flex items-center justify-center mb-4">
+                    <div class="h-[1px] bg-gradient-to-r from-transparent via-brand-gold to-transparent flex-1"></div>
+                    <h2 class="text-brand-gold font-bold text-base sm:text-xl px-4 text-center">ロレポチの仕組みをサクッと解説！</h2>
+                    <div class="h-[1px] bg-gradient-to-r from-transparent via-brand-gold to-transparent flex-1"></div>
+                </div>
+
+                <div class="space-y-3">
+                    <!-- Step 1 -->
+                    <div class="bg-black/40 border border-brand-gold/40 rounded-xl p-4 flex items-center backdrop-blur-md relative overflow-hidden shadow-lg">
+                        <div class="absolute right-0 -top-4 text-8xl text-brand-gold opacity-5 font-black italic">1</div>
+                        <div class="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-yellow-300 to-brand-gold text-brand-dark rounded-full flex items-center justify-center font-black text-lg mr-3 sm:mr-4 shadow-inner">
+                            日
+                        </div>
+                        <div class="relative z-10 w-full">
+                            <p class="font-bold text-brand-gold text-[10px] sm:text-xs mb-1">日曜日までに</p>
+                            <p class="text-white text-sm sm:text-base font-bold leading-snug">5店舗の抽選に応募！<br><span class="text-[10px] sm:text-xs font-normal text-gray-300 block mt-1">応募完了画面をスクショしてLINEへ送信📱</span></p>
+                        </div>
+                    </div>
+
+                    <!-- 下向き矢印 -->
+                    <div class="flex justify-center text-brand-gold opacity-70 -my-1">
+                        <svg class="w-6 h-6 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="bg-black/40 border border-brand-gold/40 rounded-xl p-4 flex items-center backdrop-blur-md relative overflow-hidden shadow-lg">
+                        <div class="absolute right-0 -top-4 text-8xl text-brand-gold opacity-5 font-black italic">2</div>
+                        <div class="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-yellow-300 to-brand-gold text-brand-dark rounded-full flex items-center justify-center font-black text-lg mr-3 sm:mr-4 shadow-inner">
+                            水
+                        </div>
+                        <div class="relative z-10 w-full">
+                            <p class="font-bold text-brand-gold text-[10px] sm:text-xs mb-1">翌週水曜日に</p>
+                            <p class="text-white text-sm sm:text-base font-bold leading-snug">結果発表を確認！<br><span class="text-[10px] sm:text-xs font-normal text-gray-300 block mt-1">抽選結果画面をスクショしてLINEへ送信📸</span></p>
+                        </div>
+                    </div>
+
+                    <!-- 分岐を示す矢印 -->
+                    <div class="grid grid-cols-2 gap-2 sm:gap-3 -my-2 relative z-10 pointer-events-none">
+                        <div class="flex justify-center text-gray-400 opacity-80 pt-2">
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                        </div>
+                        <div class="flex justify-center text-brand-gold opacity-90 pt-2">
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 (分岐) -->
+                    <div class="grid grid-cols-2 gap-2 sm:gap-3">
+                        <div class="bg-gradient-to-b from-gray-800 to-gray-900 border border-gray-600 rounded-xl p-2 sm:p-4 text-center relative overflow-hidden shadow-lg flex flex-col justify-between h-full">
+                            <div>
+                                <p class="text-gray-400 font-bold text-[10px] sm:text-xs mb-1">ハズレても…</p>
+                                <p class="text-white text-xs sm:text-sm font-bold leading-tight">毎週確実にお小遣い<br><span class="text-brand-gold text-lg sm:text-xl block mt-1 mb-2">1,000円 GET!</span></p>
+                            </div>
+                            <p class="text-[9px] sm:text-[10px] text-gray-400 leading-tight border-t border-gray-700 pt-2 mt-auto">※5店舗分のスクショ(応募・結果)が全て揃っていることが条件です</p>
+                        </div>
+                        <div class="bg-gradient-to-b from-yellow-400 to-brand-gold border border-yellow-200 rounded-xl p-2 sm:p-4 text-center relative overflow-hidden shadow-[0_0_15px_rgba(212,175,55,0.4)] flex flex-col justify-center h-full">
+                            <p class="text-brand-dark font-bold text-[10px] sm:text-xs mb-1">当選したら店舗へGO!</p>
+                            <p class="text-brand-dark text-xs sm:text-sm font-bold leading-tight">最低<span class="text-lg sm:text-xl text-red-700 ml-1">2万円</span>＋<br><span class="text-red-700 mt-1 block">買付成功で追加報酬!</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 応募・参加ステップ -->
+            <div class="bg-white/10 p-4 sm:p-6 rounded-2xl backdrop-blur-sm border border-brand-gold/30 max-w-xl mx-auto text-left">
+                <h3 class="text-lg sm:text-xl font-bold text-brand-gold mb-4 text-center">参加は簡単！2ステップ</h3>
+
+                <div class="mb-6">
+                    <p class="font-bold text-sm sm:text-base mb-2">【ステップ1】下記5つの店舗の抽選に応募する</p>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                        <a href="https://x.gd/FBaW3" target="_blank" rel="noopener noreferrer" class="block bg-white text-brand-dark text-center py-3 sm:py-2 rounded font-bold text-sm hover:bg-gray-200 transition shadow">大阪 応募</a>
+                        <a href="https://x.gd/O9nP4" target="_blank" rel="noopener noreferrer" class="block bg-white text-brand-dark text-center py-3 sm:py-2 rounded font-bold text-sm hover:bg-gray-200 transition shadow">名古屋 応募</a>
+                        <a href="https://x.gd/A2wq8" target="_blank" rel="noopener noreferrer" class="block bg-white text-brand-dark text-center py-3 sm:py-2 rounded font-bold text-sm hover:bg-gray-200 transition shadow">新宿 応募</a>
+                        <a href="https://x.gd/w5inx" target="_blank" rel="noopener noreferrer" class="block bg-white text-brand-dark text-center py-3 sm:py-2 rounded font-bold text-sm hover:bg-gray-200 transition shadow">銀座本店 応募</a>
+                        <a href="https://x.gd/oiqnT" target="_blank" rel="noopener noreferrer" class="block bg-white text-brand-dark text-center py-3 sm:py-2 rounded font-bold text-sm hover:bg-gray-200 transition shadow">表参道 応募</a>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="font-bold text-sm sm:text-base mb-2">【ステップ2】スクショを公式LINEに送る</p>
+                    <p class="text-xs text-gray-200 mb-3 leading-relaxed">下記の2つの画面のスクショを撮影し、公式LINEへお送りください！</p>
+
+                    <div class="flex gap-2 mb-4">
+                        <div class="flex-1 bg-black/30 border border-white/20 rounded p-2 text-center">
+                            <span class="block text-xl mb-1">📱</span>
+                            <span class="text-[10px] sm:text-xs font-bold block leading-tight">① 応募完了画面</span>
+                        </div>
+                        <div class="flex-1 bg-black/30 border border-white/20 rounded p-2 text-center">
+                            <span class="block text-xl mb-1">📸</span>
+                            <span class="text-[10px] sm:text-xs font-bold block leading-tight">② 抽選結果画面</span>
+                        </div>
+                    </div>
+
+                    <a href="https://lin.ee/sMWSHeC" target="_blank" rel="noopener noreferrer" class="block w-full bg-[#06C755] text-white text-center py-4 rounded-full font-bold text-base sm:text-lg shadow-lg hover:scale-105 transition-transform duration-300 flex items-center justify-center">
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M11.933 2.05c-5.892 0-10.67 3.864-10.67 8.625 0 2.585 1.343 4.9 3.518 6.463.414.282.98.85 1.054 1.325.074.475-.327 2.02-.327 2.02s-.096.58.264.764c.36.184 1.83-.812 1.83-.812s1.41-1.026 2.45-1.127c.62.062 1.25.093 1.88.093 5.89 0 10.67-3.863 10.67-8.625s-4.78-8.625-10.67-8.625z"/></svg>
+                        スクショを公式LINEで送る
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ノーリスク宣言セクション -->
+    <section class="py-12 px-4 bg-pattern">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-2xl font-black text-center text-brand-green mb-8 border-b-2 border-brand-gold pb-4 inline-block mx-auto flex justify-center">
+                自己資金0円！<br>完全ノーリスクで参加できる3つの理由
+            </h2>
+
+            <div class="space-y-6">
+                <!-- 理由1 -->
+                <div class="bg-white p-6 rounded-2xl shadow-md border-l-4 border-brand-gold relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-16 h-16 bg-brand-gold opacity-10 rounded-bl-full"></div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 w-10 h-10 bg-brand-green text-brand-gold rounded-full flex items-center justify-center font-black text-xl mr-4 shadow-sm">1</div>
+                        <div>
+                            <h3 class="font-bold text-lg text-brand-dark mb-2">高額な購入資金の立て替えは「一切不要」です！</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">店舗に向かう前の事前打ち合わせにて、狙うモデルの最高金額を<span class="text-red-600 font-bold bg-yellow-100 px-1">全額事前にお預け</span>いたします。当選者ご自身のお財布から時計代をお支払いいただくことは絶対にありません。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 理由2 -->
+                <div class="bg-white p-6 rounded-2xl shadow-md border-l-4 border-brand-gold relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-16 h-16 bg-brand-gold opacity-10 rounded-bl-full"></div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 w-10 h-10 bg-brand-green text-brand-gold rounded-full flex items-center justify-center font-black text-xl mr-4 shadow-sm">2</div>
+                        <div>
+                            <h3 class="font-bold text-lg text-brand-dark mb-2">クレジットカード（デビットカード）は「本人確認のため」100円の決済からでOK！</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">カード決済をお願いするのは、店舗側が厳格な「身元確認」と「購入制限のチェック」を行うための必須ルールだからです。実際にカードで決済していただくのは<span class="font-bold text-brand-green">100円などの少額決済のみ</span>で問題ありません。<br>その決済分に関しても、店舗へ向かう前に事前にお渡しいたしますのでご安心ください。</p>
+                            <p class="text-xs text-gray-500 mt-2">※高額決済をしてご自身のカードポイントを大量に貯めたい方は、全額カード決済でお得にポイントを獲得していただくことも可能です。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 理由3 -->
+                <div class="bg-white p-6 rounded-2xl shadow-md border-l-4 border-brand-gold relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-16 h-16 bg-brand-gold opacity-10 rounded-bl-full"></div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 w-10 h-10 bg-brand-green text-brand-gold rounded-full flex items-center justify-center font-black text-xl mr-4 shadow-sm">3</div>
+                        <div>
+                            <h3 class="font-bold text-lg text-brand-dark mb-2">交通費完全支給＆手ぶらで帰っても「最低2万円」保証！</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">店舗までの交通費はこちらで全額負担いたします。さらに、もし店舗に在庫がなく買い付けが失敗したとしても、店舗に足を運んでいただいたお礼として<span class="text-red-600 font-bold bg-yellow-100 px-1">「最低2万円の当選報酬」</span>を必ずお支払いします。赤字になることは100%ありません。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 実績者インタビュー（超リアルLINEスクショ枠） -->
+    <section class="py-12 px-4 bg-brand-green text-white">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-2xl font-black text-center text-brand-gold mb-2">実際に届いた喜びの声</h2>
+            <p class="text-center text-gray-200 text-sm mb-10">毎日、公式LINEにはたくさんの当選・報酬ゲットの<span class="text-yellow-300 font-bold">スクショ報告</span>が届いています！</p>
+
+            <!-- 声1〜4：2カラムマソンリー（左列：声1＋声3、右列：声2＋声4） -->
+            <div class="flex flex-col md:flex-row gap-6 mb-6">
+
+                <!-- 左列：声1 + 声3 -->
+                <div class="flex-1 flex flex-col gap-6">
+
+                    <!-- 声1：日常の継続報酬 -->
+                    <div class="bg-white p-4 sm:p-5 rounded-2xl shadow-lg border border-gray-200 flex flex-col relative">
+                        <div class="text-center mb-4">
+                            <h3 class="inline-block bg-brand-green text-white text-xs sm:text-sm font-bold py-1.5 px-4 rounded-full shadow-sm">
+                                時給換算すると最高です！
+                            </h3>
+                        </div>
+                        <div class="relative rounded-xl overflow-hidden mb-4 border border-gray-300 shadow-sm bg-[#7494C0] w-full font-sans pointer-events-none select-none">
+                            <div class="bg-black/20 w-full h-4 flex items-center justify-between px-2 text-[8px] text-white/90">
+                                <span>10:45</span>
+                                <div class="flex gap-1 tracking-widest">📶 🔋</div>
+                            </div>
+                            <div class="p-2 sm:p-3 flex flex-col gap-3">
+                                <div class="text-center"><span class="bg-black/20 text-white text-[9px] px-2 py-0.5 rounded-full">今日</span></div>
+                                <div class="flex items-start gap-1.5">
+                                    <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-pink-100 flex-shrink-0 flex items-center justify-center text-xs overflow-hidden border border-white/50">👩</div>
+                                    <div class="flex flex-col max-w-[65%]">
+                                        <div class="bg-white text-[#111] text-[10px] sm:text-[11px] p-2 rounded-2xl rounded-tl-sm shadow-sm leading-relaxed">
+                                            毎週1000円のお小遣い、<br>今週も入金確認できました！<br><br>1日5分もかからないので、<br>家事の合間にピッタリです✨<br><br>まずは月4000円目指して<br>頑張ります💪
+                                        </div>
+                                    </div>
+                                    <div class="text-[8px] sm:text-[9px] text-white/90 mt-auto mb-1">10:23</div>
+                                </div>
+                                <div class="flex items-end justify-end gap-1">
+                                    <div class="flex flex-col items-end mb-1">
+                                        <span class="text-[8px] sm:text-[9px] text-white/90">既読</span>
+                                        <span class="text-[8px] sm:text-[9px] text-white/90">10:45</span>
+                                    </div>
+                                    <div class="bg-[#8CE541] text-[#111] text-[10px] sm:text-[11px] p-2 rounded-2xl rounded-tr-sm shadow-sm leading-relaxed max-w-[70%]">
+                                        ご確認ありがとうございます！<br><br>スキマ時間の有効活用、<br>素晴らしいです😊<br><br>引き続きよろしくお願いします！
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 p-3 rounded-lg mb-3 border border-gray-100">
+                            <p class="text-sm text-gray-700 leading-relaxed font-medium">「毎週1000円のお小遣い、今週も入金確認できました！1日5分もかからないので、家事の合間にピッタリです✨まずは月4000円目指して頑張ります💪」</p>
+                        </div>
+                        <p class="text-right text-xs text-gray-500 font-bold mt-auto">40代・主婦</p>
+                    </div>
+
+                    <!-- 声3：一部店舗のみ応募 -->
+                    <div class="bg-white p-4 sm:p-5 rounded-2xl shadow-lg border border-gray-200 flex flex-col relative flex-1">
+                        <div class="text-center mb-4">
+                            <h3 class="inline-block bg-brand-green text-white text-xs sm:text-sm font-bold py-1.5 px-4 rounded-full shadow-sm">
+                                3店舗だけの応募でも当選！
+                            </h3>
+                        </div>
+                        <div class="relative rounded-xl overflow-hidden mb-4 border border-gray-300 shadow-sm bg-[#7494C0] w-full font-sans pointer-events-none select-none">
+                            <div class="bg-black/20 w-full h-4 flex items-center justify-between px-2 text-[8px] text-white/90">
+                                <span>12:42</span>
+                                <div class="flex gap-1 tracking-widest">📶 🔋</div>
+                            </div>
+                            <div class="p-2 sm:p-3 flex flex-col gap-3">
+                                <div class="text-center"><span class="bg-black/20 text-white text-[9px] px-2 py-0.5 rounded-full">昨日</span></div>
+                                <div class="flex items-start gap-1.5">
+                                    <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-yellow-100 flex-shrink-0 flex items-center justify-center text-xs overflow-hidden border border-white/50">🧑‍💻</div>
+                                    <div class="flex flex-col max-w-[65%]">
+                                        <div class="bg-white text-[#111] text-[10px] sm:text-[11px] p-2 rounded-2xl rounded-tl-sm shadow-sm leading-relaxed">
+                                            仕事の関係で遠くの店舗に行けないので、<br>都内の3店舗のみ応募していました。<br><br>どうせ当たらないだろうと<br>諦めかけていたところで、<br>結果を見たら「当選」ってなってて<br>めっちゃびっくりしました！😳<br>本当に当たるんですね！！<br><br>そして今日、無事買えちゃいました🙌<br>当選して本当に嬉しいです。<br>ロレポチって最高ですね！✨<br><br>3店舗しか応募してなくてもちゃんと当選できて、<br>報酬もゲットできて大満足です！！！<br><br>2本目3本目狙って継続していきたいと思います🔥<br><br>引き続きよろしくお願いします！
+                                        </div>
+                                    </div>
+                                    <div class="text-[8px] sm:text-[9px] text-white/90 mt-auto mb-1">12:30</div>
+                                </div>
+                                <div class="flex items-end justify-end gap-1">
+                                    <div class="flex flex-col items-end mb-1">
+                                        <span class="text-[8px] sm:text-[9px] text-white/90">既読</span>
+                                        <span class="text-[8px] sm:text-[9px] text-white/90">12:42</span>
+                                    </div>
+                                    <div class="bg-[#8CE541] text-[#111] text-[10px] sm:text-[11px] p-2 rounded-2xl rounded-tr-sm shadow-sm leading-relaxed max-w-[70%]">
+                                        ご購入おめでとうございます！🎉<br><br>都内の3店舗だけでも、<br>継続していただいた結果ですね✨<br><br>ぜひ2本目3本目も狙っていきましょう！<br><br>引き続きよろしくお願いいたします！
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 p-3 rounded-lg mb-3 border border-gray-100">
+                            <p class="text-sm text-gray-700 leading-relaxed font-medium">「どうせ当たらないだろうと諦めかけていたところで、結果を見たら『当選』ってなっててめっちゃびっくりしました！本当に当たるんですね！！ロレポチって最高ですね！✨2本目3本目狙って継続していきたいと思います🔥」</p>
+                        </div>
+                        <p class="text-right text-xs text-gray-500 font-bold mt-auto">30代・自営業</p>
+                    </div>
+
+                </div><!-- /左列 -->
+
+                <!-- 右列：声2 + 声4 -->
+                <div class="flex-1 flex flex-col gap-6">
+
+                    <!-- 声2：ハズレ保証 -->
+                    <div class="bg-white p-4 sm:p-5 rounded-2xl shadow-lg border border-gray-200 flex flex-col relative">
+                        <div class="text-center mb-4">
+                            <h3 class="inline-block bg-brand-green text-white text-xs sm:text-sm font-bold py-1.5 px-4 rounded-full shadow-sm">
+                                手ぶらでも2万円もらえました！
+                            </h3>
+                        </div>
+                        <div class="relative rounded-xl overflow-hidden mb-4 border border-gray-300 shadow-sm bg-[#7494C0] w-full font-sans pointer-events-none select-none">
+                            <div class="bg-black/20 w-full h-4 flex items-center justify-between px-2 text-[8px] text-white/90">
+                                <span>15:15</span>
+                                <div class="flex gap-1 tracking-widest">📶 🔋</div>
+                            </div>
+                            <div class="p-2 sm:p-3 flex flex-col gap-3">
+                                <div class="text-center"><span class="bg-black/20 text-white text-[9px] px-2 py-0.5 rounded-full">今日</span></div>
+                                <div class="flex items-start gap-1.5">
+                                    <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-blue-100 flex-shrink-0 flex items-center justify-center text-xs overflow-hidden border border-white/50">👨‍💼</div>
+                                    <div class="flex flex-col max-w-[65%]">
+                                        <div class="bg-white text-[#111] text-[10px] sm:text-[11px] p-2 rounded-2xl rounded-tl-sm shadow-sm leading-relaxed">
+                                            初めて当選して店舗行ってきました！<br><br>めちゃくちゃ緊張してしまって…<br>買い付けは失敗しちゃいました😭<br><br>でもさっき交通費と2万円<br>振り込まれててビックリです！<br><br>本当に手ぶらでも貰えるんですね🙇‍♂️
+                                        </div>
+                                    </div>
+                                    <div class="text-[8px] sm:text-[9px] text-white/90 mt-auto mb-1">15:10</div>
+                                </div>
+                                <div class="flex items-end justify-end gap-1">
+                                    <div class="flex flex-col items-end mb-1">
+                                        <span class="text-[8px] sm:text-[9px] text-white/90">既読</span>
+                                        <span class="text-[8px] sm:text-[9px] text-white/90">15:15</span>
+                                    </div>
+                                    <div class="bg-[#8CE541] text-[#111] text-[10px] sm:text-[11px] p-2 rounded-2xl rounded-tr-sm shadow-sm leading-relaxed max-w-[70%]">
+                                        初来店お疲れ様でした！<br>緊張しますよね💦<br><br>在庫がなくてもルール通り2万円<br>お支払いしておりますので<br>ご安心ください！<br><br>次回も頑張りましょう✨
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 p-3 rounded-lg mb-3 border border-gray-100">
+                            <p class="text-sm text-gray-700 leading-relaxed font-medium">「緊張しすぎて買い付けは失敗しちゃいました😭でもさっき交通費と2万円振り込まれててビックリです！本当に手ぶらでも貰えるんですね🙇‍♂️」</p>
+                        </div>
+                        <p class="text-right text-xs text-gray-500 font-bold mt-auto">30代・会社員</p>
+                    </div>
+
+                    <!-- 声4：買い付け成功 -->
+                    <div class="bg-white p-4 sm:p-5 rounded-2xl shadow-[0_0_15px_rgba(212,175,55,0.2)] border-2 border-brand-gold/50 flex flex-col relative flex-1">
+                        <div class="text-center mb-4">
+                            <h3 class="inline-block bg-brand-gold text-brand-dark text-xs sm:text-sm font-bold py-1.5 px-4 rounded-full shadow-sm">
+                                買い付け成功で10万円ゲット！
+                            </h3>
+                        </div>
+                        <div class="relative rounded-xl overflow-hidden mb-4 border border-gray-300 shadow-sm bg-[#7494C0] w-full font-sans pointer-events-none select-none">
+                            <div class="bg-black/20 w-full h-4 flex items-center justify-between px-2 text-[8px] text-white/90">
+                                <span>18:08</span>
+                                <div class="flex gap-1 tracking-widest">📶 🔋</div>
+                            </div>
+                            <div class="p-2 sm:p-3 flex flex-col gap-3">
+                                <div class="text-center"><span class="bg-black/20 text-white text-[9px] px-2 py-0.5 rounded-full">火曜日</span></div>
+                                <div class="flex items-start gap-1.5">
+                                    <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-green-100 flex-shrink-0 flex items-center justify-center text-xs overflow-hidden border border-white/50">👨</div>
+                                    <div class="flex flex-col max-w-[65%]">
+                                        <div class="bg-white text-[#111] text-[10px] sm:text-[11px] p-2 rounded-2xl rounded-tl-sm shadow-sm leading-relaxed">
+                                            時計の知識ゼロだったんですが、<br>事前のZoomで龍成さんから<br>教えてもらった通りにしたら<br>無事買えました🙌<br><br>初めての成功で10万円の報酬もらえて<br>震えてます…！😭
+                                        </div>
+                                    </div>
+                                    <div class="text-[8px] sm:text-[9px] text-white/90 mt-auto mb-1">18:05</div>
+                                </div>
+                                <div class="flex items-end justify-end gap-1">
+                                    <div class="flex flex-col items-end mb-1">
+                                        <span class="text-[8px] sm:text-[9px] text-white/90">既読</span>
+                                        <span class="text-[8px] sm:text-[9px] text-white/90">18:08</span>
+                                    </div>
+                                    <div class="bg-[#8CE541] text-[#111] text-[10px] sm:text-[11px] p-2 rounded-2xl rounded-tr-sm shadow-sm leading-relaxed max-w-[70%]">
+                                        おお！買付成功おめでとうございます！！🎉<br><br>事前の打ち合わせ<br>バッチリいきましたね✨<br><br>2本目3本目はもっと報酬が上がる<br>傾向にありますので、<br>半年後から再開して、<br>継続して2本目3本目狙っていきましょう🔥
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 p-3 rounded-lg mb-3 border border-gray-100">
+                            <p class="text-sm text-gray-700 leading-relaxed font-medium">「時計の知識ゼロだったんですが、事前のZoomで龍成さんから教えてもらった通りにしたら無事買えました🙌初めての成功で<span class="font-bold text-red-600 bg-yellow-100 px-1">10万円の報酬</span>もらえて震えてます…！😭」</p>
+                        </div>
+                        <p class="text-center text-[10px] text-gray-400 mb-2">※初回成功者の平均報酬は約6〜7万円とのことです。</p>
+                        <p class="text-right text-xs text-gray-500 font-bold mt-auto">30代・会社員</p>
+                    </div>
+
+                </div><!-- /右列 -->
+
+            </div><!-- /2カラムマソンリー -->
+
+            <!-- 声5：初当選30万円（全幅） -->
+            <div class="bg-gradient-to-b from-yellow-50 to-white p-4 sm:p-5 rounded-2xl shadow-[0_0_15px_rgba(212,175,55,0.4)] border-2 border-brand-gold flex flex-col relative mb-6">
+                <div class="text-center mb-4">
+                    <h3 class="inline-block bg-brand-gold text-brand-dark text-sm sm:text-base font-bold py-1.5 px-6 rounded-full shadow-sm">
+                        初当選でなんと30万円！
+                    </h3>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <div class="sm:w-1/2 lg:w-2/5 relative rounded-xl overflow-hidden border border-gray-300 shadow-sm bg-[#7494C0] w-full font-sans pointer-events-none select-none">
+                        <div class="bg-black/20 w-full h-4 flex items-center justify-between px-2 text-[8px] text-white/90">
+                            <span>11:35</span>
+                            <div class="flex gap-1 tracking-widest">📶 🔋</div>
+                        </div>
+                        <div class="p-2 sm:p-3 flex flex-col gap-2">
+                            <div class="text-center mb-1"><span class="bg-black/20 text-white text-[9px] px-2 py-0.5 rounded-full">昨日</span></div>
+                            <div class="flex items-start gap-1.5">
+                                <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-purple-100 flex-shrink-0 flex items-center justify-center text-xs overflow-hidden border border-white/50">👵</div>
+                                <div class="flex flex-col max-w-[55%]">
+                                    <div class="rounded-xl rounded-tl-sm overflow-hidden border border-black/10 shadow-sm">
+                                        <img src="./Rolex_GMTPepsi_02.jpg" alt="GMT時計" class="w-full object-cover aspect-square">
+                                    </div>
+                                </div>
+                                <div class="text-[8px] sm:text-[9px] text-white/90 mt-auto mb-1">11:18</div>
+                            </div>
+                            <div class="flex items-start gap-1.5">
+                                <div class="w-7 h-7 sm:w-8 sm:h-8 flex-shrink-0"></div>
+                                <div class="flex flex-col max-w-[70%]">
+                                    <div class="bg-white text-[#111] text-[10px] sm:text-[11px] p-2 rounded-2xl rounded-tl-sm shadow-sm leading-relaxed">
+                                        スマホの操作も不慣れで<br>ご迷惑おかけしましたが、<br>丁寧なサポートのおかげで<br>初当選で30万円の報酬いただきました！<br><br>年齢関係なく参加できて<br>本当に感謝しています✨<br><br>主人には内緒です🤭
+                                    </div>
+                                </div>
+                                <div class="text-[8px] sm:text-[9px] text-white/90 mt-auto mb-1">11:20</div>
+                            </div>
+                            <div class="flex items-end justify-end gap-1 mt-1">
+                                <div class="flex flex-col items-end mb-1">
+                                    <span class="text-[8px] sm:text-[9px] text-white/90">既読</span>
+                                    <span class="text-[8px] sm:text-[9px] text-white/90">11:35</span>
+                                </div>
+                                <div class="bg-[#8CE541] text-[#111] text-[10px] sm:text-[11px] p-2 rounded-2xl rounded-tr-sm shadow-sm leading-relaxed max-w-[75%]">
+                                    素晴らしい成果ですね！🎉<br><br>ご主人には内緒の特大へそくりですね🤫笑<br><br>引き続きよろしくお願いいたします！
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sm:w-1/2 lg:w-3/5 bg-white p-4 sm:p-6 rounded-lg flex flex-col justify-center border border-yellow-200">
+                        <p class="text-sm sm:text-base text-brand-dark leading-relaxed font-bold">
+                            「スマホの操作も不慣れでご迷惑おかけしましたが、丁寧なサポートのおかげで初当選で30万円の報酬いただきました！年齢関係なく参加できて本当に感謝しています✨主人には内緒です🤭」
+                        </p>
+                        <p class="text-right text-xs text-gray-500 font-bold mt-4">60代・主婦</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 声6：2本購入25万円（全幅） -->
+            <div class="bg-gradient-to-br from-[#1E293B] to-[#0F172A] p-4 sm:p-5 rounded-2xl shadow-[0_0_20px_rgba(212,175,55,0.5)] border-2 border-brand-gold flex flex-col relative">
+                <div class="text-center mb-4">
+                    <h3 class="inline-block bg-gradient-to-r from-yellow-400 to-yellow-600 text-brand-dark text-sm sm:text-base font-black py-2 px-6 rounded-full shadow-lg">
+                        👑 2本購入で25万円の特大報酬！
+                    </h3>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <div class="sm:w-1/3 lg:w-1/4 relative rounded-xl overflow-hidden border border-gray-600 shadow-lg bg-[#7494C0] w-full font-sans pointer-events-none select-none flex-shrink-0">
+                        <div class="bg-black/20 w-full h-4 flex items-center justify-between px-2 text-[8px] text-white/90">
+                            <span>19:46</span>
+                            <div class="flex gap-1 tracking-widest">📶 🔋</div>
+                        </div>
+                        <div class="p-2 sm:p-3 flex flex-col gap-3">
+                            <div class="text-center"><span class="bg-black/20 text-white text-[9px] px-2 py-0.5 rounded-full">今日</span></div>
+                            <div class="flex items-start gap-1.5">
+                                <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-brand-gold flex-shrink-0 flex items-center justify-center text-xs overflow-hidden border border-white/50">😎</div>
+                                <div class="flex flex-col max-w-[65%]">
+                                    <div class="bg-white text-[#111] text-[10px] sm:text-[11px] p-2 rounded-2xl rounded-tl-sm shadow-sm leading-relaxed">
+                                        やりました！！<br><br>同行者と合わせて<br>まさかの2本同時購入できました！！😆<br><br>さっき25万円の特大報酬受け取りました！<br><br>ずっと続けてて本当によかったです！<br>夢ありますねこれ！！
+                                    </div>
+                                </div>
+                                <div class="text-[8px] sm:text-[9px] text-white/90 mt-auto mb-1">19:45</div>
+                            </div>
+                            <div class="flex items-end justify-end gap-1">
+                                <div class="flex flex-col items-end mb-1">
+                                    <span class="text-[8px] sm:text-[9px] text-white/90">既読</span>
+                                    <span class="text-[8px] sm:text-[9px] text-white/90">19:46</span>
+                                </div>
+                                <div class="bg-[#8CE541] text-[#111] text-[10px] sm:text-[11px] p-2 rounded-2xl rounded-tr-sm shadow-sm leading-relaxed max-w-[70%]">
+                                    2本同時購入の快挙、<br>本当におめでとうございます！！㊗️<br><br>継続の賜物ですね！<br><br>25万円の特大ボーナス、<br>存分に楽しんでください✨
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sm:w-2/3 lg:w-3/4 bg-white p-4 sm:p-6 rounded-lg border-2 border-brand-gold flex flex-col justify-center">
+                        <p class="text-sm sm:text-base text-gray-800 leading-relaxed font-bold">
+                            「やりました！！同行者と合わせてまさかの2本同時購入できました！！😆さっき<span class="font-black text-red-600 text-lg">25万円の特大報酬</span>受け取りました！ずっと続けてて本当によかったです！夢ありますねこれ！！」
+                        </p>
+                        <p class="text-right text-xs text-gray-500 font-bold mt-4">50代・フリーランス</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 当選後の安心サポートセクション -->
+    <section class="py-12 px-4 bg-gray-50 border-y border-gray-200">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-2xl font-black text-center text-brand-green mb-8 border-b-2 border-brand-gold pb-4 inline-block mx-auto flex justify-center">
+                知識ゼロでも大丈夫！<br>当選後の安心サポート体制
+            </h2>
+            <p class="text-center text-sm sm:text-base text-gray-700 mb-10">
+                「時計の知識がないから不安…」という方もご安心ください。<br>
+                当選後から店舗に向かうまで、スタッフがマンツーマンでフルサポートいたします。
+            </p>
+
+            <div class="relative border-l-4 border-brand-gold ml-4 md:ml-8 space-y-10 pb-4">
+                <!-- ステップ1 -->
+                <div class="relative pl-6 md:pl-8">
+                    <div class="absolute -left-[14px] top-0 w-6 h-6 bg-brand-green rounded-full border-4 border-gray-50 flex items-center justify-center"></div>
+                    <h3 class="font-bold text-lg text-brand-dark mb-2">① Zoom面談で事前レクチャー</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">当選が確定しましたら、まずは当選者専用LINEにご案内し、Zoomでの打ち合わせ日程を決めます。当日の流れ、覚えておくべきこと、狙うモデルの特徴などを丁寧にレクチャーしますので、事前の専門知識は一切不要です。</p>
+                </div>
+
+                <!-- ステップ2 -->
+                <div class="relative pl-6 md:pl-8">
+                    <div class="absolute -left-[14px] top-0 w-6 h-6 bg-brand-green rounded-full border-4 border-gray-50 flex items-center justify-center"></div>
+                    <h3 class="font-bold text-lg text-brand-dark mb-2">② 来店1時間前に合流＆資金のお預け</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">来店当日は、店舗に向かう約1時間前に指定の場所（事務所等）でスタッフと待ち合わせをします。ここで購入資金の最高額を全額お預けいただき、最終的な手順の確認を行います。</p>
+                </div>
+
+                <!-- ステップ3 -->
+                <div class="relative pl-6 md:pl-8">
+                    <div class="absolute -left-[14px] top-0 w-6 h-6 bg-brand-green rounded-full border-4 border-gray-50 flex items-center justify-center"></div>
+                    <h3 class="font-bold text-lg text-brand-dark mb-2">③ 不安ゼロで、いざ店舗へ！</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">不安なことは全て解消された状態で、リラックスして店舗に向かっていただけます。もし在庫がなく手ぶらで帰ることになっても、最低2万円の報酬は確約されています！</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Q&Aセクション -->
+    <section class="py-12 px-4 bg-white">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-2xl font-black text-center text-brand-green mb-8">よくあるご質問と安心の理由</h2>
+
+            <div class="space-y-4">
+                <!-- Q1 -->
+                <div class="border border-gray-200 rounded-lg p-4">
+                    <h3 class="font-bold text-brand-green flex items-start">
+                        <span class="text-brand-gold mr-2">Q.</span>
+                        ロレックスの知識が全くないのですが、大丈夫ですか？
+                    </h3>
+                    <p class="mt-2 text-sm text-gray-700 ml-6">
+                        <span class="font-bold block mb-1">A. 全く問題ありません！知識ゼロから参加される方がほとんどです。</span>
+                        当選後、事前に必ずZoom面談を実施し、当日の流れや選ぶモデルについて丁寧にレクチャーいたします。さらに来店当日も、1時間前にスタッフと合流して資金のお渡しや最終確認を行うため、一人で不安なまま店舗に行かせるようなことは絶対にありません。安心してお任せください。
+                    </p>
+                </div>
+
+                <!-- Q2 -->
+                <div class="border border-gray-200 rounded-lg p-4">
+                    <h3 class="font-bold text-brand-green flex items-start">
+                        <span class="text-brand-gold mr-2">Q.</span>
+                        これって違法な転売ではありませんか？
+                    </h3>
+                    <p class="mt-2 text-sm text-gray-700 ml-6">
+                        <span class="font-bold block mb-1">A. 違法性やルール違反は一切ありませんのでご安心ください。</span>
+                        弊社が行っている正規の「買付サポート業務」のお手伝いをお願いしております。実際に店舗へ行き、お店のルールに従って商品を購入していただく形になりますので、違法な行為や店舗側に迷惑のかかる行為は一切ございません。
+                    </p>
+                </div>
+
+                <!-- Q3 -->
+                <div class="border border-gray-200 rounded-lg p-4">
+                    <h3 class="font-bold text-brand-green flex items-start">
+                        <span class="text-brand-gold mr-2">Q.</span>
+                        なぜロレックス側に個人情報を伝える必要があるのですか？
+                    </h3>
+                    <p class="mt-2 text-sm text-gray-700 ml-6">
+                        <span class="font-bold block mb-1">A. ロレックスの「厳格な販売ルール（転売対策）」を守るためです。</span>
+                        ロレックスは世界的に希少価値が非常に高いため、ブランド側が「身元がしっかり分かる方にのみ販売する」「同じモデルは半年間購入できない」という厳格なルールを設けています。流通量を制限し、公平に販売するための店舗側の必須プロセスですので、ご理解いただけますと幸いです。<br>
+                        ※ご家族には「スマホを使った簡単なブランド調査協力」とお伝えください。
+                    </p>
+                </div>
+
+                <!-- Q4 -->
+                <div class="border border-gray-200 rounded-lg p-4">
+                    <h3 class="font-bold text-brand-green flex items-start">
+                        <span class="text-brand-gold mr-2">Q.</span>
+                        なぜクレジットカード（またはデビットカード）が必要なのですか？
+                    </h3>
+                    <p class="mt-2 text-sm text-gray-700 ml-6">
+                        <span class="font-bold block mb-1">A. 店舗側での「確実な身元確認」と「購入制限の管理」のためです。</span>
+                        数百万単位の希少な高級時計を販売するにあたり、お店側は「顔写真付きの身分証明書」と「ご本人名義のクレジットカード等」を照合して、確実に本人であること、そして過去半年以内に購入履歴がないかを確認します。スムーズな決済と確実な身元確認のために必須となっております。
+                    </p>
+                </div>
+
+                <!-- Q5 -->
+                <div class="border border-gray-200 rounded-lg p-4">
+                    <h3 class="font-bold text-brand-green flex items-start">
+                        <span class="text-brand-gold mr-2">Q.</span>
+                        交通費が高くてお店まで行けないのですが、申し込めませんよね？
+                    </h3>
+                    <p class="mt-2 text-sm text-gray-700 ml-6">
+                        <span class="font-bold block mb-1">A. 交通費はこちらで支給いたしますので、ご安心ください！</span>
+                        遠方にお住まいの方でも、店舗までの交通費（往復分）は弊社が全額負担いたします。当選者の自己負担は一切ありませんので、お住まいの地域に関わらずお気軽にご応募ください。
+                    </p>
+                </div>
+
+                <!-- Q6 -->
+                <div class="border border-gray-200 rounded-lg p-4">
+                    <h3 class="font-bold text-brand-green flex items-start">
+                        <span class="text-brand-gold mr-2">Q.</span>
+                        子どもがいるので家を離れられません。
+                    </h3>
+                    <p class="mt-2 text-sm text-gray-700 ml-6">
+                        <span class="font-bold block mb-1">A. お子様連れでのご来店も可能となっておりますので、ご安心ください！</span>
+                        ロレックス正規店はお子様連れでも問題なくご入店いただけます。これまでにも、お子様と一緒にご来店され無事に買い付けを成功されたママさん・パパさんも多数いらっしゃいます。
+                    </p>
+                </div>
+
+                <!-- Q7 -->
+                <div class="border border-gray-200 rounded-lg p-4">
+                    <h3 class="font-bold text-brand-green flex items-start">
+                        <span class="text-brand-gold mr-2">Q.</span>
+                        抽選に参加する週に、空いている日程がないので申し込めません…
+                    </h3>
+                    <p class="mt-2 text-sm text-gray-700 ml-6">
+                        <span class="font-bold block mb-1">A. 大阪以外の店舗であれば、当選後に日程の変更が可能です！</span>
+                        ですので、「この週は忙しい…」という場合でも、まずはご応募いただいて大丈夫です。当選が確定した後からでも日程変更が可能となっておりますので、ご安心ください。（※大阪の店舗のみ日程変更不可となります）
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- クロージングセクション -->
+    <footer class="bg-gray-100 py-12 px-4 text-center border-t border-gray-200">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-xl sm:text-2xl font-black text-brand-dark mb-4">迷っている時間ももったいない！</h2>
+            <p class="text-gray-600 mb-8">まずは1回、試しに参加してみませんか？<br>あなたのスキマ時間が、確実な収入に変わります。</p>
+
+            <!-- クロージング用 応募・参加ステップ -->
+            <div class="bg-white p-4 sm:p-6 rounded-2xl shadow-lg border border-gray-200 max-w-xl mx-auto text-left">
+                <h3 class="text-lg sm:text-xl font-bold text-brand-green mb-4 text-center">参加は簡単！2ステップ</h3>
+
+                <div class="mb-6">
+                    <p class="font-bold text-brand-dark text-sm sm:text-base mb-2">【ステップ1】下記5つの店舗の抽選に応募する</p>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                        <a href="https://x.gd/FBaW3" target="_blank" rel="noopener noreferrer" class="block bg-brand-green text-white text-center py-3 sm:py-2 rounded font-bold text-sm hover:opacity-90 transition shadow">大阪 応募</a>
+                        <a href="https://x.gd/O9nP4" target="_blank" rel="noopener noreferrer" class="block bg-brand-green text-white text-center py-3 sm:py-2 rounded font-bold text-sm hover:opacity-90 transition shadow">名古屋 応募</a>
+                        <a href="https://x.gd/A2wq8" target="_blank" rel="noopener noreferrer" class="block bg-brand-green text-white text-center py-3 sm:py-2 rounded font-bold text-sm hover:opacity-90 transition shadow">新宿 応募</a>
+                        <a href="https://x.gd/w5inx" target="_blank" rel="noopener noreferrer" class="block bg-brand-green text-white text-center py-3 sm:py-2 rounded font-bold text-sm hover:opacity-90 transition shadow">銀座本店 応募</a>
+                        <a href="https://x.gd/oiqnT" target="_blank" rel="noopener noreferrer" class="block bg-brand-green text-white text-center py-3 sm:py-2 rounded font-bold text-sm hover:opacity-90 transition shadow">表参道 応募</a>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="font-bold text-brand-dark text-sm sm:text-base mb-2">【ステップ2】スクショを公式LINEに送る</p>
+                    <p class="text-xs text-gray-600 mb-3 leading-relaxed">下記の2つの画面のスクショを撮影し、公式LINEへお送りください！</p>
+
+                    <div class="flex gap-2 mb-4">
+                        <div class="flex-1 bg-gray-100 border border-gray-300 rounded p-2 text-center">
+                            <span class="block text-xl mb-1">📱</span>
+                            <span class="text-[10px] sm:text-xs font-bold text-brand-dark block leading-tight">① 応募完了画面</span>
+                        </div>
+                        <div class="flex-1 bg-gray-100 border border-gray-300 rounded p-2 text-center">
+                            <span class="block text-xl mb-1">📸</span>
+                            <span class="text-[10px] sm:text-xs font-bold text-brand-dark block leading-tight">② 抽選結果画面</span>
+                        </div>
+                    </div>
+
+                    <a href="https://lin.ee/sMWSHeC" target="_blank" rel="noopener noreferrer" class="block w-full bg-[#06C755] text-white text-center py-4 rounded-full font-bold text-base sm:text-lg shadow-lg hover:scale-105 transition-transform duration-300 flex items-center justify-center">
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M11.933 2.05c-5.892 0-10.67 3.864-10.67 8.625 0 2.585 1.343 4.9 3.518 6.463.414.282.98.85 1.054 1.325.074.475-.327 2.02-.327 2.02s-.096.58.264.764c.36.184 1.83-.812 1.83-.812s1.41-1.026 2.45-1.127c.62.062 1.25.093 1.88.093 5.89 0 10.67-3.863 10.67-8.625s-4.78-8.625-10.67-8.625z"/></svg>
+                        スクショを公式LINEで送る
+                    </a>
+                </div>
+            </div>
+
+            <p class="mt-8 text-xs text-gray-400">&copy; ロレポチ All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
